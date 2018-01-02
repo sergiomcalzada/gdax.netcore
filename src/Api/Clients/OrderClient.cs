@@ -15,7 +15,7 @@ namespace Boukenken.Gdax
         Task<ApiResponse<Order>> PlaceOrderAsync(string side, string productId, decimal size, decimal price, string type, bool postOnly, string cancelAfter = null, string timeInForce = null);
     }
 
-	public class OrderClient : GdaxClient
+	public class OrderClient : GdaxClient, IOrderClient
     {
         public OrderClient(string baseUrl, RequestAuthenticator authenticator)
             : base(baseUrl, authenticator)
